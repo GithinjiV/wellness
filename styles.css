@@ -67,14 +67,14 @@ img {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 24px 0;
+  padding: 16px 0;
   transition: all 0.4s ease;
 }
 
 .header.scrolled {
   background: rgba(250, 248, 243, 0.95);
   backdrop-filter: blur(20px);
-  padding: 16px 0;
+  padding: 12px 0;
   box-shadow: 0 1px 0 rgba(0,0,0,0.05);
 }
 
@@ -82,19 +82,22 @@ img {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 60px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .logo img {
-  height: 80px;
+  height: 180px;
   width: auto;
   transition: transform 0.3s ease;
+  object-fit: contain;
+  margin-top: -20px;
 }
 
 .logo:hover img {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .nav-links {
@@ -105,13 +108,29 @@ img {
 
 .nav-links a {
   font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-soft);
-  transition: color 0.3s ease;
+  font-weight: 400;
+  color: var(--purple);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--purple);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--text);
+  color: var(--purple-dark);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .nav-cta {
@@ -122,9 +141,13 @@ img {
   transition: all 0.3s ease;
 }
 
+.nav-cta::after {
+  display: none !important;
+}
+
 .nav-cta:hover {
   background: var(--purple-dark);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .mobile-menu-btn {
@@ -236,9 +259,10 @@ img {
   transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  color: var(--purple);
+  color: var(--purple-light);
   pointer-events: none;
   z-index: 0;
+  opacity: 0.15;
 }
 
 .hero-content {
@@ -249,6 +273,18 @@ img {
   position: relative;
   z-index: 2;
   order: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-eyebrow {
@@ -268,8 +304,8 @@ img {
   display: block;
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 300;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .title-accent {
@@ -280,9 +316,10 @@ img {
 .hero-subtitle {
   font-size: 1.15rem;
   color: var(--text-soft);
-  max-width: 400px;
+  max-width: 420px;
   margin-bottom: 48px;
-  line-height: 1.8;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .btn-primary {
@@ -290,7 +327,7 @@ img {
   align-items: center;
   gap: 12px;
   padding: 18px 36px;
-  background: var(--text);
+  background: var(--purple);
   color: var(--white);
   font-size: 0.95rem;
   font-weight: 500;
@@ -331,8 +368,8 @@ img {
 
 .btn-primary:hover {
   background: var(--purple);
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(125, 91, 166, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(125, 91, 166, 0.15);
 }
 
 .btn-primary:hover svg {
@@ -344,7 +381,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 60px;
+  padding: 140px 60px;
   order: 2;
 }
 
@@ -363,13 +400,14 @@ img {
 
 .hero-image-accent {
   position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 200px;
-  height: 200px;
+  bottom: -15px;
+  right: -15px;
+  width: 160px;
+  height: 160px;
   background: var(--gold-light);
   border-radius: 50%;
   z-index: -1;
+  opacity: 0.7;
 }
 
 .hero-scroll {
@@ -398,15 +436,16 @@ img {
   position: absolute;
   left: 0;
   top: 0;
-  width: 30%;
+  width: 20%;
   height: 100%;
-  background: var(--purple);
-  animation: scrollLine 2s ease-in-out infinite;
+  background: var(--text-soft);
+  animation: scrollLine 3s ease-in-out infinite;
 }
 
 @keyframes scrollLine {
-  0%, 100% { transform: translateX(-100%); }
-  50% { transform: translateX(400%); }
+  0%, 100% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  90% { transform: translateX(400%); opacity: 0; }
 }
 
 .statement {
@@ -869,8 +908,8 @@ img {
 }
 
 .footer {
-  background: var(--text);
-  color: var(--white);
+  background: var(--cream-dark);
+  color: var(--text);
   padding: 80px 60px 48px;
 }
 
@@ -883,16 +922,15 @@ img {
 }
 
 .footer-logo {
-  height: 56px;
+  height: 200px;
   width: auto;
   margin-bottom: 20px;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .footer-brand p {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.5);
+  color: var(--text-soft);
   max-width: 280px;
   line-height: 1.7;
 }
@@ -908,27 +946,40 @@ img {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
   margin-bottom: 20px;
 }
 
 .footer-col a {
   display: block;
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+  color: var(--purple);
   margin-bottom: 12px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-col a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--purple);
+  transition: width 0.3s ease;
 }
 
 .footer-col a:hover {
-  color: var(--white);
+  color: var(--purple-dark);
 }
 
 .footer-bottom {
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid var(--cream);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -936,7 +987,7 @@ img {
 
 .footer-bottom p {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--text-muted);
 }
 
 .footer-bottom .crisis a {
@@ -958,7 +1009,7 @@ img {
 
   .hero-image {
     order: 1;
-    padding: 140px 40px 0;
+    padding: 180px 40px 0;
   }
 
   .hero-subtitle {
@@ -1025,7 +1076,7 @@ img {
 
   .hero-image {
     order: 1;
-    padding: 120px 24px 0;
+    padding: 140px 24px 0;
   }
 
   .title-line {
@@ -2732,31 +2783,31 @@ img {
     transform: none;
     box-shadow: 0 8px 25px rgba(125, 91, 166, 0.25);
   }
-  
+
   .session-btn:active {
     transform: scale(0.98);
   }
-  
+
   /* Better mobile spacing */
   .section-title,
   .booking-form-header-premium h2,
   .booking-contact h2 {
     font-size: 1.8rem;
   }
-  
+
   .how-it-works-steps {
     padding: 40px 24px;
   }
-  
+
   .journey-step {
     gap: 12px;
   }
-  
+
   .booking-form-sidebar {
     position: static;
     gap: 16px;
   }
-  
+
   .sidebar-card {
     padding: 20px;
   }
@@ -2768,28 +2819,28 @@ img {
     border-radius: 150px 150px 16px 16px;
     height: 280px;
   }
-  
+
   .session-types {
     padding: 60px 16px;
   }
-  
+
   .how-it-works {
     grid-template-columns: 1fr;
     min-height: auto;
   }
-  
+
   .booking-form-premium {
     padding: 60px 16px;
   }
-  
+
   .booking-contact {
     padding: 60px 16px;
   }
-  
+
   .booking-phone {
     font-size: 1.5rem;
   }
-  
+
   .btn-primary,
   .session-btn {
     min-height: 48px;
@@ -3379,57 +3430,57 @@ img {
   .booking-hero-title .title-line {
     font-size: 2rem;
   }
-  
+
   .session-card {
     margin-bottom: 16px;
   }
-  
+
   .session-card-content {
     padding: 32px 24px;
   }
-  
+
   .session-card h3 {
     font-size: 1.4rem;
   }
-  
+
   .session-btn {
     padding: 14px 20px;
     font-size: 0.9rem;
   }
-  
+
   .journey-step {
     gap: 16px;
   }
-  
+
   .journey-step-num {
     width: 48px;
     height: 48px;
     font-size: 1rem;
   }
-  
+
   .journey-step-content {
     padding-bottom: 32px;
   }
-  
+
   .journey-step-content h4 {
     font-size: 1.1rem;
   }
-  
+
   .booking-form-sidebar {
     gap: 16px;
     margin-top: 32px;
   }
-  
+
   .sidebar-card {
     padding: 24px;
   }
-  
+
   .booking-contact-inner {
     flex-direction: column;
     gap: 32px;
     text-align: center;
   }
-  
+
   .booking-contact-decoration {
     order: -1;
   }
@@ -3439,39 +3490,39 @@ img {
   .session-card-content {
     padding: 24px 20px;
   }
-  
+
   .session-meta {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-  
+
   .session-card h3 {
     font-size: 1.2rem;
   }
-  
+
   .session-btn {
     padding: 12px 18px;
     font-size: 0.85rem;
   }
-  
+
   .booking-form-premium {
     padding: 60px 16px;
   }
-  
+
   .premium-form {
     padding: 24px 16px;
   }
-  
+
   .form-section {
     margin-bottom: 32px;
   }
-  
+
   .form-row {
     gap: 16px;
     margin-bottom: 16px;
   }
-  
+
   .form-group input,
   .form-group select,
   .form-group textarea {
