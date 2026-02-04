@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Evenna Mental Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/@hotwired/stimulus/dist/stimulus.umd.js"></script>
+  <script src="interactive_controller.js" defer></script>
+</head>
+<body data-controller="interactive">
+  <div class="grain"></div>
+
+  <header class="header" data-interactive-target="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <img src="logo (2).png" alt="Evenna Mental Wellness">
+      </a>
+      <div class="nav-links" data-interactive-target="navLinks">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="faq.html">FAQ</a>
+        <a href="booking.html" class="nav-cta">Book a Session</a>
+      </div>
+      <button class="mobile-menu-btn" data-action="click->interactive#toggleMobileMenu" data-interactive-target="menuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" data-interactive-target="mobileMenu">
+    <div class="mobile-menu-content">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="booking.html" class="mobile-cta">Book a Session</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <span class="section-number">FAQ</span>
+        <h1 class="page-title">Common Questions</h1>
+        <p class="page-subtitle">Find answers to frequently asked questions about our services and what to expect.</p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-container">
+        <div class="faq-category">
+          <h2 class="faq-category-title">Getting Started</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>How do I schedule my first appointment?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Getting started is easy! You can book online through our <a href="booking.html">booking page</a>, or call us directly at (555) 123-4567. We recommend starting with a free 15-minute consultation to discuss your needs and ensure we're the right fit.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>What should I expect during my first visit?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Your initial evaluation is a 60-minute session where we'll discuss your history, current concerns, and goals. This is a collaborative conversation—there's no pressure to share more than you're comfortable with. By the end, we'll develop a personalized treatment plan together.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>Do I need a referral from my primary care doctor?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>No referral is needed. You can schedule directly with us. However, we do coordinate care with your primary care physician and other providers with your permission to ensure comprehensive treatment.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>What ages do you treat?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>We provide care for all ages, from children to older adults. Our approach is tailored to each individual's developmental stage and unique needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h2 class="faq-category-title">Telehealth & Technology</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>How does telehealth work?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>All appointments are conducted via secure, HIPAA-compliant video conferencing. Before your appointment, you'll receive a link to join the session. All you need is a device with a camera and microphone, and a private, quiet space.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>Is telehealth as effective as in-person visits?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Yes! Research consistently shows that telehealth psychiatric care is just as effective as in-person treatment for most conditions. Many patients actually prefer the convenience and comfort of meeting from home.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>What if I have technical difficulties?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Don't worry—technology hiccups happen! If you experience issues connecting, call our office and we'll help troubleshoot. We can also conduct sessions via phone if video isn't working.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h2 class="faq-category-title">Insurance & Payment</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>Do you accept insurance?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>We are an out-of-network provider, which means we don't bill insurance directly. However, we provide detailed superbills that you can submit to your insurance for potential reimbursement. Many PPO plans offer out-of-network benefits.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>What are your rates?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>We believe in transparent pricing. Initial evaluations are $350 for a 60-minute session. Follow-up appointments are $200 for 30 minutes. We also offer a free 15-minute consultation for new patients.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>What payment methods do you accept?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>We accept all major credit cards, debit cards, and HSA/FSA cards. Payment is collected at the time of service through our secure patient portal.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>Do you offer sliding scale fees?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>We believe mental health care should be accessible. We offer a limited number of sliding scale spots for those who qualify based on financial need. Please contact us to discuss your situation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h2 class="faq-category-title">Treatment & Medication</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>Will I need to take medication?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Not necessarily. Medication is one tool among many, and we take a collaborative approach to treatment decisions. We'll discuss all options and make recommendations based on your specific situation, preferences, and goals.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>How do you handle prescriptions via telehealth?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>We can prescribe most psychiatric medications via telehealth and send them electronically to your preferred pharmacy. There are some limitations on controlled substances depending on state regulations, which we'll discuss during your consultation.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>How often will I need to be seen?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Appointment frequency varies based on your needs and treatment plan. Initially, we may meet more frequently (every 2-4 weeks), then transition to monthly or quarterly appointments as you stabilize.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>Do you provide therapy or just medication management?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>We offer both! In addition to medication management, we provide brief psychotherapy incorporating cognitive-behavioral techniques, mindfulness, and supportive counseling. For those needing more intensive therapy, we can coordinate with therapists in your area.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-category">
+          <h2 class="faq-category-title">Privacy & Confidentiality</h2>
+          <div class="faq-list">
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>Is my information kept confidential?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Absolutely. Your privacy is paramount. All information shared in sessions is confidential and protected by HIPAA regulations. We use secure, encrypted systems for all communications and record-keeping.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-controller="faq">
+              <button class="faq-question" data-action="click->faq#toggle">
+                <span>Will my employer or family know I'm receiving treatment?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14"/>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>No. We never share your information with employers, family members, or anyone else without your explicit written consent. The only exceptions are legally mandated situations involving safety concerns.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-contact">
+      <div class="faq-contact-inner">
+        <h2>Still have questions?</h2>
+        <p>We're here to help. Reach out and we'll get back to you within 24 hours.</p>
+        <div class="faq-contact-options">
+          <a href="mailto:hello@evenna.com" class="btn-secondary">
+            <span>Email Us</span>
+          </a>
+          <a href="tel:5551234567" class="btn-primary">
+            <span>Call (555) 123-4567</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="logo (2).png" alt="Evenna Mental Wellness" class="footer-logo">
+        <p>Compassionate mental health care, centered on you.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="faq.html">FAQ</a>
+          <a href="booking.html">Book a Session</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="tel:5551234567">(555) 123-4567</a>
+          <a href="mailto:hello@evenna.com">hello@evenna.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Evenna Mental Wellness</p>
+      <p class="crisis">In crisis? Call <a href="tel:988">988</a> or visit your nearest emergency room.</p>
+    </div>
+  </footer>
+</body>
+</html>

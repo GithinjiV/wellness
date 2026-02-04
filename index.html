@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evenna Mental Wellness | Compassionate Mental Health Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/@hotwired/stimulus/dist/stimulus.umd.js"></script>
+  <script src="interactive_controller.js" defer></script>
+</head>
+<body data-controller="interactive">
+  <div class="grain"></div>
+
+  <header class="header" data-interactive-target="header">
+    <nav class="nav">
+      <a href="#" class="logo">
+        <img src="logo (2).png" alt="Evenna Mental Wellness">
+      </a>
+      <div class="nav-links" data-interactive-target="navLinks">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="faq.html">FAQ</a>
+        <a href="booking.html" class="nav-cta">Book a Session</a>
+      </div>
+      <button class="mobile-menu-btn" data-action="click->interactive#toggleMobileMenu" data-interactive-target="menuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="mobile-menu" data-interactive-target="mobileMenu">
+    <div class="mobile-menu-content">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="booking.html" class="mobile-cta">Book a Session</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-decoration">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M200 20C200 20 60 140 60 220C60 297.32 122.68 360 200 360C277.32 360 340 297.32 340 220C340 140 200 20 200 20Z" stroke="currentColor" stroke-width="1" opacity="0.15"/>
+          <path d="M200 60C200 60 100 150 100 210C100 265.228 144.772 310 200 310C255.228 310 300 265.228 300 210C300 150 200 60 200 60Z" stroke="currentColor" stroke-width="1" opacity="0.1"/>
+        </svg>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80" alt="Peaceful moment">
+          <div class="hero-image-accent"></div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Evenna Mental Wellness</p>
+        <h1 class="hero-title">
+          <span class="title-line">Find your</span>
+          <span class="title-line title-accent">balance.</span>
+        </h1>
+        <p class="hero-subtitle">A compassionate space for healing, growth, and mental well-being.</p>
+        <a href="booking.html" class="btn-primary">
+          <span>Begin Your Journey</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="statement-inner">
+        <div class="statement-mark">"</div>
+        <p class="statement-text">We believe healing happens when you feel <em>truly heard</em>. Our practice combines evidence-based care with genuine human connection.</p>
+      </div>
+    </section>
+
+    <section id="approach" class="approach">
+      <div class="approach-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">Our Approach</h2>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-main">
+          <div class="approach-image">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=80" alt="Compassionate care">
+          </div>
+        </div>
+        <div class="approach-content">
+          <p class="approach-lead">Mental health care should be accessible, personalized, and free from judgment.</p>
+          <div class="approach-values">
+            <div class="value">
+              <div class="value-icon">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M16 10v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Your Pace</h4>
+                <p>No rushing. We move at the speed that feels right for you.</p>
+              </div>
+            </div>
+            <div class="value">
+              <div class="value-icon">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <path d="M16 28s10-5 10-12.5V8l-10-4-10 4v7.5C6 23 16 28 16 28z" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Safe Space</h4>
+                <p>A judgment-free environment where vulnerability is welcomed.</p>
+              </div>
+            </div>
+            <div class="value">
+              <div class="value-icon">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <path d="M23 11a5.5 5.5 0 00-7.78 0L14 12.22l-1.22-1.22a5.5 5.5 0 00-7.78 7.78l1.22 1.22L14 28l7.78-7.78 1.22-1.22a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Compassion First</h4>
+                <p>Genuine care and empathy at the heart of everything we do.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="services-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Services</h2>
+        <p class="services-intro">Holistic telemedicine care for all ages, designed to guide you toward lasting wellness.</p>
+      </div>
+      <div class="services-showcase">
+        <div class="service-item">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=600&q=80" alt="ADHD care">
+          </div>
+          <div class="service-details">
+            <span class="service-number">01</span>
+            <h3>ADHD</h3>
+            <p>Comprehensive evaluation and treatment for attention deficit hyperactivity disorder in children and adults.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Depression and anxiety">
+          </div>
+          <div class="service-details">
+            <span class="service-number">02</span>
+            <h3>Depression & Anxiety</h3>
+            <p>Evidence-based approaches to help manage symptoms and develop lasting coping strategies.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&q=80" alt="PTSD treatment">
+          </div>
+          <div class="service-details">
+            <span class="service-number">03</span>
+            <h3>PTSD & Trauma</h3>
+            <p>Gentle, trauma-informed care to help you process experiences and reclaim your sense of safety.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=600&q=80" alt="Bipolar and schizophrenia">
+          </div>
+          <div class="service-details">
+            <span class="service-number">04</span>
+            <h3>Bipolar & Schizophrenia</h3>
+            <p>Specialized care and medication management for complex psychiatric conditions.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Medication management">
+          </div>
+          <div class="service-details">
+            <span class="service-number">05</span>
+            <h3>Medication Management</h3>
+            <p>Personalized psychiatric medication plans with ongoing monitoring and adjustments for optimal results.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" alt="Brief psychotherapy">
+          </div>
+          <div class="service-details">
+            <span class="service-number">06</span>
+            <h3>Brief Psychotherapy</h3>
+            <p>Focused therapeutic sessions designed to address specific concerns and build practical coping skills.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="process-visual">
+        <img src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?w=1200&q=80" alt="Your journey">
+        <div class="process-overlay">
+          <span class="section-number light">03</span>
+          <h2 class="process-title">Getting Started</h2>
+        </div>
+      </div>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-marker">
+            <span class="step-num">1</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h4>Free Consultation</h4>
+            <p>A brief, no-pressure call to understand your needs and see if we're the right fit.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-marker">
+            <span class="step-num">2</span>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h4>Complete Intake</h4>
+            <p>Simple, secure forms you can complete at your convenience before your first session.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-marker">
+            <span class="step-num">3</span>
+          </div>
+          <div class="step-content">
+            <h4>Begin Your Care</h4>
+            <p>Start your personalized treatment journey with a provider who truly understands you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="booking">
+      <div class="booking-bg">
+        <div class="booking-shape booking-shape-1"></div>
+        <div class="booking-shape booking-shape-2"></div>
+      </div>
+      <div class="booking-content">
+        <span class="section-number">04</span>
+        <h2 class="booking-title">Ready to begin?</h2>
+        <p class="booking-subtitle">Choose a provider to schedule your consultation.</p>
+        <div class="providers">
+          <a href="booking.html" class="provider-card">
+            <div class="provider-info">
+              <span class="provider-name">Dr. Sarah Chen</span>
+              <span class="provider-role">Psychiatrist</span>
+            </div>
+            <span class="provider-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+          <a href="booking.html" class="provider-card">
+            <div class="provider-info">
+              <span class="provider-name">Dr. Michael Torres</span>
+              <span class="provider-role">Therapist</span>
+            </div>
+            <span class="provider-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="booking-alt">
+          <span>Prefer to talk first?</span>
+          <a href="tel:5551234567">(555) 123-4567</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="logo (2).png" alt="Evenna Mental Wellness" class="footer-logo">
+        <p>Compassionate mental health care, centered on you.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="faq.html">FAQ</a>
+          <a href="booking.html">Book a Session</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="tel:5551234567">(555) 123-4567</a>
+          <a href="mailto:hello@evenna.com">hello@evenna.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Evenna Mental Wellness</p>
+      <p class="crisis">In crisis? Call <a href="tel:988">988</a> or visit your nearest emergency room.</p>
+    </div>
+  </footer>
+</body>
+</html>
